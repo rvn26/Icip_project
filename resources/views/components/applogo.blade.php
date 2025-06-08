@@ -1,0 +1,1 @@
+<img src="{{ asset('images/logo/logo_icip.png') }}" alt="">
