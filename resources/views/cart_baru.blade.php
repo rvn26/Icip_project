@@ -103,7 +103,7 @@
                 const id = button.getAttribute('data-id');
                 const action = button.getAttribute('data-action');
     
-                const response = await fetch("{{ route('cart.update') }}", {
+                const response = await fetch("/cart/update", {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',

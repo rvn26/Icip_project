@@ -34,7 +34,7 @@ class Cartbarucontroller extends Controller
                 "gambar" => $product->gambar,
             ];
         }
-        
+
         session()->put("cart", $cart);
         return redirect()->back()->with("success", "Produk berhasil ditambahkan ke keranjang");
     }
@@ -128,7 +128,7 @@ class Cartbarucontroller extends Controller
         if (!$alamat) {
             $request->validate([
                 'nama' => 'required|max:100',
-                'nomer' => 'required|numeric|digits:10',
+                'nomer' => 'required|numeric',
                 'provinsi' => 'required',
                 'kota' => 'required',
                 'alamat' => 'required',
@@ -142,7 +142,7 @@ class Cartbarucontroller extends Controller
             $alamat->alamat = $request->alamat;
             $alamat->patokan = $request->patokan;
             $alamat->user_id = $user_id;
-            $alamat->isdefault = true;
+            $alamat->isdefault = $request->has('isdefault');
             $alamat->save();
         }
         $result = $this->setAmountForCheckout();
@@ -181,7 +181,7 @@ class Cartbarucontroller extends Controller
                     'gross_amount' => $order->total,
                 ],
                 'customer_details' => [
-                    'name' => Auth::user()->nama,
+                    'name' => Auth::user()->name,
                     'phone' => $order->nomer,
                     'email' => Auth::user()->email ?? 'customer@mail.com',
                 ],
@@ -220,6 +220,46 @@ class Cartbarucontroller extends Controller
         session::put('order_id', $order->id);
         return redirect()->route('cart.confirmation');
     }
+
+    public function edit_alamat($id)
+    {
+        $alamat = Alamat::findOrFail($id);
+        return view('ubah-alamat', compact('alamat'));
+    }
+
+    public function update_alamat(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'nomer' => 'required',
+            'provinsi' => 'required',
+            'kota' => 'required',
+            'alamat' => 'required',
+            'patokan' => 'nullable',
+        ]);
+
+        $alamat = Alamat::findOrFail($id);
+
+        $alamat->nama = $request->nama;
+        $alamat->nomer = $request->nomer;
+        $alamat->provinsi = $request->provinsi;
+        $alamat->kota = $request->kota;
+        $alamat->alamat = $request->alamat;
+        $alamat->patokan = $request->patokan;
+
+        if ($request->has('isdefault')) {
+            // Set semua alamat user ke false
+            Alamat::where('user_id', $alamat->user_id)->update(['isdefault' => false]);
+            $alamat->isdefault = true;
+        } else {
+            $alamat->isdefault = false;
+        }
+
+        $alamat->save();
+
+        return redirect()->route('cart.checkout')->with('success', 'Alamat berhasil diperbarui.');
+    }
+
 
     public function setAmountForCheckout()
     {
