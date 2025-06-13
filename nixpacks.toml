@@ -22,6 +22,7 @@ cmd = '/assets/start.sh'
 [staticAssets]
 "start.sh" = '''
 #!/bin/bash
+cp /app/.env.example /app/.env
 
 # Generate the application key
 php /app/artisan key:generate
