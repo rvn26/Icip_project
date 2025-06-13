@@ -335,7 +335,7 @@ class Cartbarucontroller extends Controller
         } elseif ($transactionStatus === 'pending') {
             $transaksi->status = 'menunggu';
         } elseif (in_array($transactionStatus, ['deny', 'cancel', 'expire'])) {
-            $transaksi->status = 'gagal';
+            $transaksi->status = 'ditolak';
         }
 
         $transaksi->save();

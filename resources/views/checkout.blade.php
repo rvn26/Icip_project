@@ -378,7 +378,7 @@
                     },
                     onPending: function (result) {
                         // Redirect juga jika pending
-                        window.location.href = "{{ route('cart.confirmation') }}";
+                        window.location.href = "{{ route('riwayat.order') }}";
                     },
                     onError: function (result) {
                         alert("Pembayaran gagal. Silakan coba lagi.");

@@ -60,15 +60,15 @@
                 <h3 class="text-xl font-semibold text-gray-800 mb-2">Info Kontak</h3>
                 <p class="text-gray-700">
                     <i class="fas fa-map-marker-alt text-blue-600 mr-3"> </i>
-                    Jl.bla bla bla
+                    Perum Jl. Wirasana Indah, RT.03/RW.06, Wirasana, Kec. Purbalingga, Kabupaten Purbalingga, Jawa Tengah 53318
                 </p>
                 <p class="text-gray-700">
                     <i class="fas fa-phone-alt text-blue-600 mr-3"> </i>
-                    +628123456
+                    +6288220132902
                 </p>
                 <p class="text-gray-700">
                     <i class="fas fa-envelope text-blue-600 mr-3"> </i>
-                    Toko@gmail.com
+                    makjuicipicip@gmail.com
                 </p>
                 <div class="mt-6">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d751.9617652048389!2d109.36510062807783!3d-7.38102125414557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559b7c1058d0d%3A0x7968cc27d05188e1!2sMakaroni%20Keju%20Icip%20-%20Icip!5e1!3m2!1sid!2sid!4v1747199557813!5m2!1sid!2sid" class="rounded-lg shadow-md w-full"  width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

@@ -288,6 +288,10 @@ class AdminController extends Controller
             $transaction = Transaksi::where('order_id', $request->order_id)->first();
             $transaction->status = "disetujui";
             $transaction->save();
+        }else if($request->order_status == 'dibatalkan'){
+            $transaction = Transaksi::where('order_id', $request->order_id)->first();
+            $transaction->status = "ditolak";
+            $transaction->save();
         }
         return back()->with("status", "Status changed successfully!");
     }

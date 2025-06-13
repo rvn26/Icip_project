@@ -50,7 +50,7 @@
                     Makaroni<br /><strong class="font-bold">Icip Icip</strong>
                   </h2>
                   <p class="mb-0 animate animate_fade animate_btt animate_delay-5">
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsa dignissimos exercitationem, accusantium ipsam quisquam, voluptates deserunt sed ratione maiores libero odit et, unde repudiandae obcaecati! Et corrupti quasi impedit?
+                  Nikmati sensasi pedas khas balado yang dipadukan dengan gurihnya keju, menciptakan rasa unik yang menggoda lidah. Camilan renyah ini cocok untuk kamu yang suka tantangan rasa—manis, gurih, dan pedas jadi satu!
                   </p>
                 </div>
               </div>
@@ -70,12 +70,14 @@
                     Makaroni<br /><strong class="font-bold">Icip Icip</strong>
                   </h2>
                   <p class="mb-0 animate animate_fade animate_btt animate_delay-5">
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsa dignissimos exercitationem, accusantium ipsam quisquam, voluptates deserunt sed ratione maiores libero odit et, unde repudiandae obcaecati! Et corrupti quasi impedit?
+                    Rasa Gurih yang Bikin Meleleh di Lidah!
+
+                    Dibalut dengan taburan keju yang melimpah, makaroni keju ICIP ICIP hadir sebagai camilan sempurna untuk pencinta rasa creamy dan gurih. Tekstur renyah luar biasa, berpadu dengan keju premium yang bikin susah berhenti ngunyah!
                   </p>
                 </div>
               </div>
               <div class="relative w-full md:w-2/3 bg-[#f5e6e0]">
-                <img loading="lazy" src="{{ asset('img/DSCF7776.jpg') }}" width="630" height="450" alt="Women's accessories" class="w-full h-full object-cover" />
+                <img loading="lazy" src="{{ asset('uploads/barang/original/1747506937.png') }}" width="630" height="450" alt="Women's accessories" class="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -88,12 +90,14 @@
                     Makaroni<br /><strong class="font-bold">Icip Icip</strong>
                   </h2>
                   <p class="mb-0 animate animate_fade animate_btt animate_delay-5">
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ipsa dignissimos exercitationem, accusantium ipsam quisquam, voluptates deserunt sed ratione maiores libero odit et, unde repudiandae obcaecati! Et corrupti quasi impedit?
-                  </p>
+                  Renyah di Luar, Lumer Coklat di Setiap Gigitan!
+
+Inovasi unik dari ICIP-ICIP! Makaroni renyah yang dibalut dengan coklat manis premium, memberikan sensasi camilan manis dan gurih dalam satu gigitan. Cocok untuk kamu yang ingin ngemil beda dari yang lain!
+                  </p>    
                 </div>
               </div>
               <div class="relative w-full md:w-2/3 bg-[#f5e6e0]">
-                <img loading="lazy" src="{{ asset('img/DSCF7772.jpg') }}" width="630" height="450" alt="Women's accessories" class="w-full h-full object-cover" />
+                <img loading="lazy" src="{{ asset('uploads/barang/original/1747504887.png') }}" width="630" height="450" alt="Women's accessories" class="w-full h-full object-cover" />
               </div>
             </div>
           </div>
