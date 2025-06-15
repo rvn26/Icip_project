@@ -122,7 +122,7 @@
         button.addEventListener('click', async () => {
             const id = button.getAttribute('data-id');
 
-            const response = await fetch("{{ route('cart.remove') }}", {
+            const response = await fetch("/cart/remove", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
