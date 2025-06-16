@@ -115,6 +115,27 @@
                         </div>                    
                     </div>
                 </form>
+
+                <h5>Update Transaksi Status</h5>
+                <form action="{{route('admin.transaksi.status.update')}}" method="POST">
+                    @csrf
+                    @method("PUT")
+                    <input type="hidden" name="order_id" value="{{ $transaksi->order->id }}"  />
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="select">
+                                <select id="transaksi_status" name="transaksi_status">                            
+                                    <option value="Menunggu" {{$transaksi->status=="menunggu" ? "selected":""}}>Menunggu</option>
+                                    <option value="Dibayar" {{$transaksi->status=="disetujui" ? "selected":""}}>Dibayar</option>
+                                    <option value="Ditolak" {{$transaksi->status=="ditolak" ? "selected":""}}>Ditolak</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="btn btn-primary tf-button w208">Update</button>
+                        </div>                    
+                    </div>
+                </form>
             </div>
 
             {{-- Detail Item --}}

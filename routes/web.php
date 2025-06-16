@@ -83,6 +83,7 @@ Route::middleware(['auth', 'adminmiddleware'])->group(function () {
     Route::get('/admin/order', [AdminController::class, 'ShowOrder'])->name('admin.order');
     Route::get('/admin/order/{id}/details', [AdminController::class, 'Order_detail'])->name('admin.order.detail');
     Route::put('/admin/order/update-status', [AdminController::class, 'update_order_status'])->name('admin.order.status.update');
+    Route::put('/admin/order/transaksi-status', [AdminController::class, 'update_transaksi_status'])->name('admin.transaksi.status.update');
     Route::get('/admin/exel', [AdminController::class, 'export'])->name('admin.exel');
     Route::get('/admin/Laporanexel', [AdminController::class, 'exportLaporan'])->name('admin.laporanexel');
     Route::get('/admin/cetak', [AdminController::class, 'cetak'])->name('admin.cetak');
@@ -102,4 +103,5 @@ Route::middleware(['auth', 'kasirmiddleware'])->group(function () {
     Route::get('/kasir/order', [kasirController::class, 'ShowOrder'])->name('kasir.order');
     Route::get('/kasir/order/{id}/details', [kasirController::class, 'Order_detail'])->name('kasir.order.detail');
     Route::put('/kasir/order/update-status', [kasirController::class, 'update_order_status'])->name('kasir.order.status.update');
+    Route::put('/kasir/order/transaksi-status', [KasirController::class, 'update_transaksi_status'])->name('kasir.transaksi.status.update');
 });

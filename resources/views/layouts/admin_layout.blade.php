@@ -150,11 +150,11 @@
                                                 <div class="text">Export exel</div>
                                             </a>
                                         </li>
-                                        <li class="sub-menu-item">
+                                        {{-- <li class="sub-menu-item">
                                             <a href="order-tracking.html" class="">
                                                 <div class="text">Export PDF</div>
                                             </a>
-                                        </li>
+                                        </li> --}}
                                     </ul>
                                 </li>
 
@@ -164,18 +164,7 @@
                                         <div class="text">User</div>
                                     </a>
                                 </li>
-                                <li class="menu-item">
-                                    <a href="settings.html" class="">
-                                        <div class="icon"><i class="icon-settings"></i></div>
-                                        <div class="text">Settings</div>
-                                    </a>
-                                </li>
-                                {{-- <li class="menu-item">
-                                    <a href="{{ route('admin.exel') }}" class="">
-                                        <div class="icon"><i class="icon-settings"></i></div>
-                                        <div class="text">export</div>
-                                    </a>
-                                </li> --}}
+
                                 <li class="menu-item">
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
@@ -204,7 +193,7 @@
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
                                 </div>
-                                <form class="form-search flex-grow">
+                                {{-- <form class="form-search flex-grow">
                                     <fieldset class="name">
                                         <input type="text" placeholder="Search here..." class="show-search" name="name"
                                             tabindex="2" value="" aria-required="true" required="">
@@ -213,7 +202,7 @@
                                         <button class="" type="submit"><i class="icon-search"></i></button>
                                     </div>
                                     <div class="box-content-search" id="box-content-search">
-                                        {{-- <ul class="mb-24">
+                                        <ul class="mb-24">
                                             <li class="mb-14">
                                                 <div class="body-title">Top selling product</div>
                                             </li>
@@ -328,12 +317,12 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                        </ul> --}}
+                                        </ul>
                                     </div>
-                                </form>
+                                </form> --}}
                             </div>
                             <div class="header-grid">
-                                <div class="popup-wrap message type-header">
+                                {{-- <div class="popup-wrap message type-header">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
                                             id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
@@ -398,7 +387,7 @@
                                             <li><a href="#" class="tf-button w-full">View all</a></li>
                                         </ul>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="popup-wrap user type-header">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"

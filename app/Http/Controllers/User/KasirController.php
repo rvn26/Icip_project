@@ -229,4 +229,20 @@ class KasirController extends Controller
         return back()->with("status", "Status changed successfully!");
     }
 
+      public function update_transaksi_status(Request $request)
+    {
+        $transaksi = Transaksi::where('order_id', $request->order_id)->first();
+        
+        $transaksi->status = $request->transaksi_status;
+       
+        if ($request->transaksi_status == 'Dibayar') {
+            $transaksi->status = "disetujui";
+        }else if($request->transaksi_status == 'Ditolak'){
+            $transaksi->status = "ditolak";
+        }
+        
+        $transaksi->save();
+        return back()->with("status", "Status changed successfully!");
+    }
+
 }
