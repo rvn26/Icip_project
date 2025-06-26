@@ -92,7 +92,7 @@
                         </div>
                         <div class="upload-image flex-grow">
                             <div class="item" id="imgpreview" style="display:none">
-                                <img src="{{ asset('images/upload/upload-1.png') }}" class="effect8" alt="">
+                                 <img src="" class="effect8" alt="Preview Gambar">
                             </div>
                             <div id="upload-file" class="item up-load">
                                 <label class="uploadfile" for="myFile">
@@ -150,7 +150,7 @@
 
         $("#gFile").on("change", function (e) {
             $(".gitems").remove();
-            const gFile = $("gFile");
+            const gFile = $("#gFile");
             const gphotos = this.files;
             $.each(gphotos, function (key, val) {
                 $("#galUpload").prepend(`<div class="item gitems"><img src="${URL.createObjectURL(val)}" alt=""></div>`);
