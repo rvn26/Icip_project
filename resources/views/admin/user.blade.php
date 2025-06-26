@@ -56,11 +56,11 @@
                                 <td>{{ $users->id }}</td>
                                 <td class="pname">
                                     <div class="image">
-                                        <img src="user-1.html" alt="" class="image">
+                                        <img src="{{ asset('images/avatar/Avatar.webp') }}" alt="" class="image">
                                     </div>
                                     <div class="name">
                                         <a href="#" class="body-title-2">{{ $users->name }}</a>
-                                        <div class="text-tiny mt-3">ADM</div>
+                                        <div class="text-tiny mt-3">{{ $users->role }}</div>
                                     </div>
                                 </td>
                                 <td>{{ $users->email }}</td>

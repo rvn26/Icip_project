@@ -57,7 +57,7 @@
                             <button class="inline-flex items-center  py-2 border-none border-transparent text-sm leading-4 font-medium rounded-md text-black bg-transparent hover:text-black focus:outline-none transition ease-in-out duration-150">                 
                                 <div class="ms-1 text-lg md:text-xl px-1 w-10">
                                         <span class="image">
-                                            <img src="{{asset('images/avatar/user-1.png')  }} " alt="">
+                                            <img src="{{asset('images/avatar/Avatar.webp')  }} " alt="">
                                         </span>              
                                     {{-- <i class="fas fa-user"> </i> --}}
                                 </div>

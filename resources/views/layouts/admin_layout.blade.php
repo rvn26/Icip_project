@@ -19,6 +19,7 @@
     {{-- --}}
     <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
+    
 {{--     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"> --}}
     @stack("styles")
@@ -139,7 +140,7 @@
                                     </ul>
                                 </li>
 
-                                <li class="menu-item has-children">
+                                {{-- <li class="menu-item has-children">
                                     <a href="javascript:void(0);" class="menu-item-button">
                                         <div class="icon"><i class="icon-file-plus"></i></div>
                                         <div class="text">Cetak Laporan</div>
@@ -147,16 +148,16 @@
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
                                             <a href="{{ route('admin.cetak') }}" class="">
-                                                <div class="text">Export exel</div>
+                                                <div class="text">Export excel</div>
                                             </a>
                                         </li>
-                                        {{-- <li class="sub-menu-item">
+                                        <li class="sub-menu-item">
                                             <a href="order-tracking.html" class="">
                                                 <div class="text">Export PDF</div>
                                             </a>
-                                        </li> --}}
+                                        </li> 
                                     </ul>
-                                </li>
+                                </li> --}}
 
                                 <li class="menu-item">
                                     <a href="{{ route('admin.user') }}" class="">
@@ -394,7 +395,7 @@
                                             id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-user wg-user">
                                                 <span class="image">
-                                                    <img src="{{asset('images/avatar/user-1.png')  }} " alt="">
+                                                    <img src="{{asset('images/avatar/Avatar.webp')  }} " alt="">
                                                 </span>
                                                 <span class="flex flex-column">
                                                     <span class="body-title mb-2">Kristin Watson</span>
