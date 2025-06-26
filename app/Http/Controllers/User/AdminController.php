@@ -245,8 +245,15 @@ class AdminController extends Controller
     {
         $destinationPaththumbnail = public_path('uploads/barang');
         $destinationPath = public_path('uploads/barang/detail');
-        dd($destinationPath);
-        dd($destinationPaththumbnail);
+            if (!File::exists($destinationPaththumbnail)) {
+                File::makeDirectory($destinationPaththumbnail, 0775, true);
+            }
+
+            if (!File::exists($destinationPath)) {
+                File::makeDirectory($destinationPath, 0775, true);
+            }
+        // dd($destinationPath);
+        // dd($destinationPaththumbnail);
         $img = Image::read($image->path());
         $img->cover(560, 690, 'center');
         $img->resize(560, 690, function ($constraint) {
