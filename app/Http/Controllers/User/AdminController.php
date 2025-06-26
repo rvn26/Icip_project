@@ -141,6 +141,7 @@ class AdminController extends Controller
             $gambar = $request->file('gambar');
             $fileExtension = $gambar->extension();
             $fileName = Carbon::now()->timestamp . '.' . $fileExtension;
+            dd($fileName);
             $this->generateProductThumbnailImage($gambar, $fileName);
             $gambar->move(public_path('uploads/barang/original'), $fileName);
             $Product->gambar = $fileName;
