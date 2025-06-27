@@ -199,8 +199,8 @@ class AdminController extends Controller
             if (File::exists(public_path('uploads/barang') . '/' . $Product->gambar)) {
                 File::delete(public_path('uploads/barang') . '/' . $Product->gambar);
             }
-            if (File::exists(public_path('uploads/products/detail') . '/' . $Product->gambar)) {
-                File::delete(public_path('uploads/products/detail') . '/' . $Product->gambar);
+            if (File::exists(public_path('uploads/barang/detail') . '/' . $Product->gambar)) {
+                File::delete(public_path('uploads/barang/detail') . '/' . $Product->gambar);
             }
             $gambar = $request->file('gambar');
             $fileExtension = $gambar->extension();
@@ -218,14 +218,14 @@ class AdminController extends Controller
                 // if (File::exists(public_path('uploads/products') . '/' . trim($gimage))) {
                 //     File::delete(public_path('uploads/products') . '/' . trim($gimage));
                 // }
-                if (File::exists('uploads/products' . '/' . trim($gimage))) {
-                    File::delete('uploads/products' . '/' . trim($gimage));
+                if (File::exists('uploads/barang' . '/' . trim($gimage))) {
+                    File::delete('uploads/barang' . '/' . trim($gimage));
                 }
                 // if (File::exists(public_path('uploads/products/detail') . '/' . trim($gimage))) {
                 //     File::delete(public_path('uploads/products/detail') . '/' . trim($gimage));
                 // }
-                if (File::exists('uploads/products/detail' . '/' . trim($gimage))) {
-                    File::delete('uploads/products/detail' . '/' . trim($gimage));
+                if (File::exists('uploads/barang/detail' . '/' . trim($gimage))) {
+                    File::delete('uploads/barang/detail' . '/' . trim($gimage));
                 }
             }
             $allowedfileExtension = ['jpg', 'png', 'jpeg'];
