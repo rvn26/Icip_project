@@ -130,14 +130,14 @@
                                     </span>
                                     <span class="text-tiny">Drop your images here or select <span
                                             class="tf-color">click to browse</span></span>
-                                    <input type="file" id="gFile" name="images[]" accept="image/*"
+                                    <input type="file" id="gFile" name="gambar_detail[]" accept="image/*"
                                         multiple="">
                                 </label>
                             </div>
                         </div>
                     </fieldset>
                     <div class="cols gap10">
-                        <button class="tf-button w-full" type="submit">Tambahkan</button>
+                        <button class="tf-button w-full" type="submit">Simpan Edit</button>
                     </div>
                 </div>
             </form>
@@ -161,7 +161,7 @@
 
         $("#gFile").on("change", function (e) {
             $(".gitems").remove();
-            const gFile = $("gFile");
+            const gFile = $("#gFile");
             const gphotos = this.files;
             $.each(gphotos, function (key, val) {
                 $("#galUpload").prepend(`<div class="item gitems"><img src="${URL.createObjectURL(val)}" alt=""></div>`);

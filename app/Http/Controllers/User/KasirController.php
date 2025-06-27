@@ -72,8 +72,8 @@ class KasirController extends Controller
             if (File::exists(public_path('uploads/barang') . '/' . $Product->gambar)) {
                 File::delete(public_path('uploads/barang') . '/' . $Product->gambar);
             }
-            if (File::exists(public_path('uploads/products/detail') . '/' . $Product->gambar)) {
-                File::delete(public_path('uploads/products/detail') . '/' . $Product->gambar);
+            if (File::exists(public_path('uploads/barang/detail') . '/' . $Product->gambar)) {
+                File::delete(public_path('uploads/barang/detail') . '/' . $Product->gambar);
             }
             $gambar = $request->file('gambar');
             $fileExtension = $gambar->extension();
@@ -88,11 +88,11 @@ class KasirController extends Controller
         if ($request->hasFile('gambar_detail')) {
             $oldGImages = explode(",", $Product->images);
             foreach ($oldGImages as $gimage) {
-                if (File::exists(public_path('uploads/products') . '/' . trim($gimage))) {
-                    File::delete(public_path('uploads/products') . '/' . trim($gimage));
+                if (File::exists(public_path('uploads/barang') . '/' . trim($gimage))) {
+                    File::delete(public_path('uploads/barang') . '/' . trim($gimage));
                 }
-                if (File::exists(public_path('uploads/products/detail') . '/' . trim($gimage))) {
-                    File::delete(public_path('uploads/products/detail') . '/' . trim($gimage));
+                if (File::exists(public_path('uploads/barang/detail') . '/' . trim($gimage))) {
+                    File::delete(public_path('uploads/barang/detail') . '/' . trim($gimage));
                 }
             }
             $allowedfileExtension = ['jpg', 'png', 'jpeg'];
@@ -110,9 +110,8 @@ class KasirController extends Controller
             $gallery_images = implode(',', $gallery_arr);
         }
         $Product->gambar_detail = $gallery_images;
-
         $Product->save();
-        return redirect()->route('kasir.product')->with('status', 'Product has been added successfully!');
+        return redirect()->route('kasir.product')->with('status', 'Produk berhasil ditambahkan!');
     }
 
     public function updateproduct(Request $request)
@@ -136,8 +135,8 @@ class KasirController extends Controller
             if (FilE::exists(public_path('uploads/barang') . '/' . $Product->gambar)) {
                 File::delete(public_path('uploads/barang') . '/' . $Product->gambar);
             }
-            if (File::exists(public_path('uploads/products/detail') . '/' . $Product->gambar)) {
-                File::delete(public_path('uploads/products/detail') . '/' . $Product->gambar);
+            if (File::exists(public_path('uploads/barang/detail') . '/' . $Product->gambar)) {
+                File::delete(public_path('uploads/barang/detail') . '/' . $Product->gambar);
             }
             $gambar = $request->file('gambar');
             $fileExtension = $gambar->extension();
@@ -152,11 +151,11 @@ class KasirController extends Controller
         if ($request->hasFile('gambar_detail')) {
             $oldGImages = explode(",", $Product->images);
             foreach ($oldGImages as $gimage) {
-                if (File::exists(public_path('uploads/products') . '/' . trim($gimage))) {
-                    File::delete(public_path('uploads/products') . '/' . trim($gimage));
+                if (File::exists(public_path('uploads/barang') . '/' . trim($gimage))) {
+                    File::delete(public_path('uploads/barang') . '/' . trim($gimage));
                 }
-                if (File::exists(public_path('uploads/products/detail') . '/' . trim($gimage))) {
-                    File::delete(public_path('uploads/products/detail') . '/' . trim($gimage));
+                if (File::exists(public_path('uploads/barang/detail') . '/' . trim($gimage))) {
+                    File::delete(public_path('uploads/barang/detail') . '/' . trim($gimage));
                 }
             }
             $allowedfileExtension = ['jpg', 'png', 'jpeg'];
@@ -172,23 +171,32 @@ class KasirController extends Controller
                 }
             }
             $gallery_images = implode(',', $gallery_arr);
+            $Product->gambar_detail = $gallery_images;
         }
-        $Product->gambar_detail = $gallery_images;
+        
         $Product->save();
-        return redirect()->route('kasir.product')->with('status', 'Product has been updated successfully!');
+        return redirect()->route('kasir.product')->with('status', 'Produk berhasil di edit!');
     }
 
     public function generateProductThumbnailImage($image, $imageName)
     {
-        $destinationPaththumbnail = public_path('uploads/barang');
-        $destinationPath = public_path('uploads/barang/detail');
+        $destinationPaththumbnail = 'uploads/barang';
+        $destinationPath = 'uploads/barang/detail';
+        if (!File::exists($destinationPaththumbnail)) {
+            File::makeDirectory($destinationPaththumbnail, 0775, true);
+        }
+
+        if (!File::exists($destinationPath)) {
+            File::makeDirectory($destinationPath, 0775, true);
+        }
+        // dd(is_writable($destinationPath . $imageName));
         $img = Image::read($image->path());
         $img->cover(560, 690, 'center');
         $img->resize(560, 690, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath . '/' . $imageName);
 
-        $img->resize(300, 300, function ($constraint) {
+        $img->resize(104, 104, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPaththumbnail . '/' . $imageName);
     }
