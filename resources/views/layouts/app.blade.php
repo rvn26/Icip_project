@@ -25,7 +25,7 @@
 
 <body class=" antialiased ">
     
-    <a href="https://wa.me/+6288220132902 " target="_blank" rel="noopener noreferrer"
+    <a href="https://wa.me/+6285604901311 " target="_blank" rel="noopener noreferrer"
         class="fixed bottom-10 right-10 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg flex items-center justify-center z-50"
         aria-label="WhatsApp Chat">
         <i class="fab fa-whatsapp fa-lg"></i>
