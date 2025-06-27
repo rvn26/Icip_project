@@ -258,7 +258,7 @@ class AdminController extends Controller
         if (!File::exists($destinationPath)) {
             File::makeDirectory($destinationPath, 0775, true);
         }
-        
+        dd(is_writable($path . $fileName));
         $img = Image::read($image->path());
         $img->cover(560, 690, 'center');
         $img->resize(560, 690, function ($constraint) {
