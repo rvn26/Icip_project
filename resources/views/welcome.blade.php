@@ -1,4 +1,7 @@
 <x-font-layout>
+    @section('title')
+    <title>ICIP-ICIP</title>
+    @endsection
   <section class="bg-white w-screen h-screen  ">
 
     <div

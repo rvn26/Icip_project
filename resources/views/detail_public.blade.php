@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-font-layout>
     @section('title')
     <title>{{ $product->nama }} </title>
     @endsection
@@ -112,12 +112,12 @@
                             width="150" />
                     @endforeach
                     @else
-                            {{-- <div class="flex justify-center w-[106px] h-[131px] cursor-pointer border-2 border-orange3 rounded-lg">
+                            <div class="flex justify-center w-[106px] h-[131px] cursor-pointer border-2 border-orange3 rounded-lg">
                             <img alt="Gambar {{ $product->nama }}"
                             class="thumbnail-image " height="auto"
                             id="" src="{{ asset('images/logo/Logo_bnw.png')}}"
                             width="100" />
-                            </div> --}}
+                            </div>
                     @endif
                 </div>
                     </form>
@@ -148,7 +148,7 @@
                 @foreach ($products as $barang)
 
                     <article class="bg-white rounded-lg shadow-md hover:shadow-2xl p-4 transition flex flex-col">
-                        <a href="{{ route('shop.detail', ['id' => $barang->id]) }}">
+                        <a href="{{ route('belanja.detail', ['id' => $barang->id]) }}">
                             <div class="swiper-container rounded-t-lg w-full aspect-auto">
                                 <div class="swiper-wrapper">
                                     @if ($barang->gambar_detail)
@@ -267,4 +267,4 @@
         
     </script>
 
-</x-app-layout>
+</x-font-layout>

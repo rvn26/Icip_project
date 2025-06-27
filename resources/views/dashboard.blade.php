@@ -1,4 +1,7 @@
 <x-app-layout>
+  @section('title')
+  <title>Dahsbord ICIP-ICIP</title>
+  @endsection
   <section class="bg-white w-screen h-screen  ">
 
     <div

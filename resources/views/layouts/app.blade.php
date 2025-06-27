@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    @yield('title')
+    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,24 +17,7 @@
     <link rel="icon" href="{{ asset('images/logo/icip_icip_favicon.ico') }}" type="image/png">
     @yield('styles')
 
-    {{-- link bootstrap --}}
-    {{-- <link rel="shortcut icon" href="{{ asset('asset/images/favicon.ico') }}" type="image/x-icon"> --}}
-    {{-- <link rel="preconnect" href="https://fonts.gstatic.com/"> --}}   
-      {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/animation.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-select.min.css') }}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
-      <link rel="stylesheet" href="{{ asset('font/fonts.css') }}">
-      <link rel="stylesheet" href="{{ asset('icon/style.css') }}">
-      
-      <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.min.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}"> --}}
-      {{-- <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" type="text/css" />
-      <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-      <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer"> --}}
-    <!-- Scripts -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
      

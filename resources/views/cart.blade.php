@@ -1,4 +1,7 @@
 <x-app-layout>
+    @section('title')
+    <title>Keranjang ICIP-ICIP</title>
+    @endsection
     {{-- <main class="pt-90">
         <div class="mb-4 pb-4"></div>
         <section class="shop-checkout container">

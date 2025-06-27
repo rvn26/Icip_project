@@ -1,5 +1,7 @@
 <x-font-layout>
-
+    @section('title')
+    <title>Kontak ICIP-ICIP</title>
+    @endsection
     <main class="pt-[90px] flex max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <div>

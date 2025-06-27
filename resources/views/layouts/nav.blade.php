@@ -17,7 +17,10 @@
                     <x-nav-link :href="url('/')" :active="request()->routeIs('home')">
                                 {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="url('/Kontak1')" :active="request()->routeIs('kontak1')">
+                    <x-nav-link :href="url('/belanja')" :active="request()->routeIs('belanja')">
+                                {{ __('Belanja') }}
+                    </x-nav-link>
+                    <x-nav-link :href="url('/Kontak')" :active="request()->routeIs('kontak')">
                                 {{ __('Kontak') }}
                     </x-nav-link>        
                 </div>
@@ -74,7 +77,10 @@
             <x-responsive-nav-link :href="url('/')" :active="request()->routeIs('home')">
                     {{ __('Home') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="url('/Kontak1')" :active="request()->routeIs('kontak1')">
+            <x-responsive-nav-link :href="url('/belanja')" :active="request()->routeIs('belanja')">
+                    {{ __('belanja') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="url('/Kontak')" :active="request()->routeIs('kontak')">
                     {{ __('Kontak') }}
             </x-responsive-nav-link> 
         </div>

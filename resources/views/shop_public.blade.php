@@ -1,6 +1,6 @@
-<x-app-layout>
+<x-font-layout>
   @section('title')
-  <title>Dahsbord ICIP-ICIP</title>
+  <title>Produk ICIP-ICIP</title>
   @endsection
   @section('styles')
   <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
@@ -126,7 +126,7 @@ Inovasi unik dari ICIP-ICIP! Makaroni renyah yang dibalut dengan coklat manis pr
           @endphp
           
           <article class="bg-white rounded-lg shadow-md hover:shadow-2xl transition flex flex-col">
-            <a href="{{ route('shop.detail',['id'=>$barang->id]) }}">
+            <a href="{{ route('belanja.detail',['id'=>$barang->id]) }}">
             <div class="swiper-container rounded-t-lg w-full aspect-auto">
               <div class="swiper-wrapper">
                 @if ($barang->gambar_detail)
@@ -187,4 +187,4 @@ Inovasi unik dari ICIP-ICIP! Makaroni renyah yang dibalut dengan coklat manis pr
       <script src="asset/js/plugins/countdown.js"></script>
       <script src="asset/js/theme.js"></script>  --}}
       @endsection
-</x-app-layout>
+</x-font-layout>

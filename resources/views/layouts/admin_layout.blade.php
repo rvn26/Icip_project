@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('font/fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('icon/style.css') }}">
+    <link rel="icon" href="{{ asset('images/logo/icip_icip_favicon.ico') }}" type="image/png">
     {{-- --}}
     <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
@@ -132,32 +133,9 @@
                                                 <div class="text">Daftar Pesanan</div>
                                             </a>
                                         </li>
-                                        {{-- <li class="sub-menu-item">
-                                            <a href="order-tracking.html" class="">
-                                                <div class="text">Order tracking</div>
-                                            </a>
-                                        </li> --}}
                                     </ul>
                                 </li>
 
-                                {{-- <li class="menu-item has-children">
-                                    <a href="javascript:void(0);" class="menu-item-button">
-                                        <div class="icon"><i class="icon-file-plus"></i></div>
-                                        <div class="text">Cetak Laporan</div>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class="sub-menu-item">
-                                            <a href="{{ route('admin.cetak') }}" class="">
-                                                <div class="text">Export excel</div>
-                                            </a>
-                                        </li>
-                                        <li class="sub-menu-item">
-                                            <a href="order-tracking.html" class="">
-                                                <div class="text">Export PDF</div>
-                                            </a>
-                                        </li> 
-                                    </ul>
-                                </li> --}}
 
                                 <li class="menu-item">
                                     <a href="{{ route('admin.user') }}" class="">

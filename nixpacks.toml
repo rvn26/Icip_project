@@ -23,6 +23,8 @@ cmd = '/assets/start.sh'
 "start.sh" = '''
 #!/bin/bash
 cp /app/.env.example /app/.env
+chmod -R 775 /app/public/uploads 
+chown -R www-data:www-data /app/public/uploads 
 
 # Generate the application key
 php /app/artisan key:generate

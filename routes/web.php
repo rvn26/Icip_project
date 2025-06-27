@@ -3,6 +3,7 @@
 use App\Http\Controllers\Cartbarucontroller;
 use App\Http\Controllers\Cartcontroller;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicController;
 use App\Http\Controllers\User\AdminController;
 use App\Http\Controllers\User\KasirController;
 use App\Http\Controllers\User\UserController;
@@ -20,12 +21,16 @@ Route::get('/', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/Kontak1', function () {
+Route::get('/Kontak', function () {
     $product = Product::all();
     return view('Kontak1', compact('product'));
-})->name('kontak1');
-
-
+})->name('kontak');
+// Route::get('/belanja', function () {
+//     $product = Product::all();
+//     return view('shop_public', compact('product'));
+// })->name('belanja');
+Route::get('/belanja', [PublicController::class, 'viewshop'])->name('belanja');
+Route::get('/belanja/detail/{id}', [PublicController::class, 'shop_detail'])->name('belanja.detail');
 
 
 
