@@ -110,8 +110,8 @@
                         <h2>Icip-Icip</h2>
                         Perum Jl. Wirasana Indah, RT.03/RW.06, Wirasana, Purbalingga<br>
                         Jawa Tengah 53318<br>
-                        Phone: +6288220132902<br>
-                        Email: contact@awesomecompany.com
+                        Phone: +6285604901311<br>
+                        Email: makjuicipicip@gmail.com
                     </div>
                 </td>
                 <td width="40%">
@@ -162,7 +162,7 @@
 
         <div class="footer">
             <p>Terimakasih telah membeli</p>
-            <p>Hubungi +6288220132902 atau contact@awesomecompany.com</p>
+            <p>Hubungi +6285604901311 atau makjuicipicip@gmail.com</p>
         </div>
     </div>
 </body>
