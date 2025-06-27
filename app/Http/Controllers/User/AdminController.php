@@ -141,7 +141,6 @@ class AdminController extends Controller
             $gambar = $request->file('gambar');
             $fileExtension = $gambar->extension();
             $fileName = Carbon::now()->timestamp . '.' . $fileExtension;
-            
             $this->generateProductThumbnailImage($gambar, $fileName);
             $gambar->move(public_path('uploads/barang/original'), $fileName);
             $Product->gambar = $fileName;
@@ -187,7 +186,7 @@ class AdminController extends Controller
             'deskripsi' => 'required|string',
             'Stok' => 'required|integer',
             'Status_stok' => 'required|string',
-            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'gambar' => 'mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $Product = Product::find($request->id);
         $Product->nama = $request->nama;
@@ -216,11 +215,17 @@ class AdminController extends Controller
         if ($request->hasFile('gambar_detail')) {
             $oldGImages = explode(",", $Product->images);
             foreach ($oldGImages as $gimage) {
-                if (File::exists(public_path('uploads/products') . '/' . trim($gimage))) {
-                    File::delete(public_path('uploads/products') . '/' . trim($gimage));
+                // if (File::exists(public_path('uploads/products') . '/' . trim($gimage))) {
+                //     File::delete(public_path('uploads/products') . '/' . trim($gimage));
+                // }
+                if (File::exists('uploads/products' . '/' . trim($gimage))) {
+                    File::delete('uploads/products' . '/' . trim($gimage));
                 }
-                if (File::exists(public_path('uploads/products/detail') . '/' . trim($gimage))) {
-                    File::delete(public_path('uploads/products/detail') . '/' . trim($gimage));
+                // if (File::exists(public_path('uploads/products/detail') . '/' . trim($gimage))) {
+                //     File::delete(public_path('uploads/products/detail') . '/' . trim($gimage));
+                // }
+                if (File::exists('uploads/products/detail' . '/' . trim($gimage))) {
+                    File::delete('uploads/products/detail' . '/' . trim($gimage));
                 }
             }
             $allowedfileExtension = ['jpg', 'png', 'jpeg'];
@@ -236,32 +241,31 @@ class AdminController extends Controller
                 }
             }
             $gallery_images = implode(',', $gallery_arr);
+            $Product->gambar_detail = $gallery_images;
         }
-        $Product->gambar_detail = $gallery_images;
         $Product->save();
-        return redirect()->route('admin.product')->with('status', 'Product has been updated successfully!');
+        return redirect()->route('admin.product')->with('status', 'Produk berhasil di edit');
     }
 
     public function generateProductThumbnailImage($image, $imageName)
     {
-        $destinationPaththumbnail = public_path('uploads/barang');
-        $destinationPath = public_path('uploads/barang/detail');
-            if (!File::exists($destinationPaththumbnail)) {
-                File::makeDirectory($destinationPaththumbnail, 0775, true);
-            }
+        $destinationPaththumbnail = 'uploads/barang';
+        $destinationPath = 'uploads/barang/detail';
+        if (!File::exists($destinationPaththumbnail)) {
+            File::makeDirectory($destinationPaththumbnail, 0775, true);
+        }
 
-            if (!File::exists($destinationPath)) {
-                File::makeDirectory($destinationPath, 0775, true);
-            }
-        // dd($destinationPath);
-        // dd($destinationPaththumbnail);
+        if (!File::exists($destinationPath)) {
+            File::makeDirectory($destinationPath, 0775, true);
+        }
+        
         $img = Image::read($image->path());
         $img->cover(560, 690, 'center');
         $img->resize(560, 690, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPath . '/' . $imageName);
 
-        $img->resize(300, 300, function ($constraint) {
+        $img->resize(104, 104, function ($constraint) {
             $constraint->aspectRatio();
         })->save($destinationPaththumbnail . '/' . $imageName);
     }
@@ -298,7 +302,7 @@ class AdminController extends Controller
             $transaction = Transaksi::where('order_id', $request->order_id)->first();
             $transaction->status = "disetujui";
             $transaction->save();
-        }else if($request->order_status == 'dibatalkan'){
+        } else if ($request->order_status == 'dibatalkan') {
             $transaction = Transaksi::where('order_id', $request->order_id)->first();
             $transaction->status = "ditolak";
             $transaction->save();
@@ -308,15 +312,15 @@ class AdminController extends Controller
     public function update_transaksi_status(Request $request)
     {
         $transaksi = Transaksi::where('order_id', $request->order_id)->first();
-        
+
         $transaksi->status = $request->transaksi_status;
-       
+
         if ($request->transaksi_status == 'Dibayar') {
             $transaksi->status = "disetujui";
-        }else if($request->transaksi_status == 'Ditolak'){
+        } else if ($request->transaksi_status == 'Ditolak') {
             $transaksi->status = "ditolak";
         }
-        
+
         $transaksi->save();
         return back()->with("status", "Status changed successfully!");
     }
@@ -333,11 +337,12 @@ class AdminController extends Controller
         $bulan = $request->input('bulan'); // e.g. 1 = Januari
         $tahun = $request->input('tahun'); // e.g. 1 = Januari
 
-        return Excel::download(new LaporanExport($bulan,$tahun), 'orders-bulan-' . $bulan . '-'.$tahun. '.xlsx');
+        return Excel::download(new LaporanExport($bulan, $tahun), 'orders-bulan-' . $bulan . '-' . $tahun . '.xlsx');
         // return Excel::download(new UsersExport, 'users.xlsx');
     }
 
-    public function cetak(){
+    public function cetak()
+    {
         return view('admin.cetak');
     }
 }

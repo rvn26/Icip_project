@@ -82,8 +82,8 @@
                         <div class="body-title mb-10">Stok</div>
                         <div class="select mb-10">
                             <select class="" name="Status_stok">
-                                <option value="tersedia">Tersedia</option>
-                                <option value="tidak tersedia">Tidak Tersedia</option>
+                                <option value="tersedia" {{ $product->Status_stok == "tersedia" ? "selected" : "" }}>Tersedia</option>
+                                <option value="tidak tersedia" {{ $product->Status_stok == "tidak tersedia" ? "selected" : "" }}>Tidak Tersedia</option>
                             </select>
                         </div>
                     </fieldset>
@@ -115,7 +115,7 @@
                         <div class="upload-image mb-16">
                             @if ($product->gambar_detail)
                             @foreach (explode(',',$product->gambar_detail) as $img )
-                                <div class="item" id="imgpreview">
+                                <div class="item gitems" id="imgpreview">
                                     <img src="{{ asset('uploads/barang/detail') }}/{{ trim($img) }}" class="effect8" alt="">
                                 </div>
                                 @endforeach
@@ -130,14 +130,14 @@
                                     </span>
                                     <span class="text-tiny">Drop your images here or select <span
                                             class="tf-color">click to browse</span></span>
-                                    <input type="file" id="gFile" name="images[]" accept="image/*"
+                                    <input type="file" id="gFile" name="gambar_detail[]" accept="image/*"
                                         multiple="">
                                 </label>
                             </div>
                         </div>
                     </fieldset>
                     <div class="cols gap10">
-                        <button class="tf-button w-full" type="submit">Tambahkan</button>
+                        <button class="tf-button w-full" type="submit">Simpan Edit</button>
                     </div>
                 </div>
             </form>
