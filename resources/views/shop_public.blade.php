@@ -131,7 +131,7 @@ Inovasi unik dari ICIP-ICIP! Makaroni renyah yang dibalut dengan coklat manis pr
               <div class="swiper-wrapper">
                 @if ($barang->gambar_detail)
                     @foreach (explode(',',$barang->gambar_detail) as $img)
-                      @if (file_exists(public_path('uploads/barang/detail/' . trim($img))))
+                      @if (File::exists(public_path('uploads/barang/detail') . '/'  . trim($img))))
                         <div class="swiper-slide">
                             <img
                             src="{{ asset('uploads/barang/detail')}}/{{ trim($img) }} "
